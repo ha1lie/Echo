@@ -1,14 +1,18 @@
 //
-//  NewEntryCard.swift
+//  EntryCard.swift
 //  Echo
 //
 //  Created by Hallie on 1/28/23.
 //
 
+import Foundation
+
 import SwiftUI
 
-struct NewEntryCard: View {
+struct EntryCard: View {
     let callback: () -> Void
+    
+    let entry: Int
     
     var body: some View {
         Button {
@@ -18,18 +22,17 @@ struct NewEntryCard: View {
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundColor(.echoGray)
                 
-                Image(systemName: "plus.circle.fill")
-                    .foregroundColor(.echoGreen)
-                    .font(.system(size: 40))
+                Text("1/28/23 - \(self.entry)")
+                    .foregroundColor(.white)
             }.frame(height: 180)
         }.buttonStyle(PlainButtonStyle())
     }
 }
 
-struct NewEntryCard_Previews: PreviewProvider {
+struct EntryCard_Previews: PreviewProvider {
     static var previews: some View {
-        NewEntryCard {
+        EntryCard(callback: {
             return
-        }
+        }, entry: 1)
     }
 }

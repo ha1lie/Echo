@@ -11,6 +11,9 @@ struct HomePage: View {
     
     let unauthenticateCallback: () -> Void
     
+    @State var displayedEntry: Int? = nil
+    @State var displayEntry: Bool = false
+    
     init(_ unauth: @escaping () -> Void) {
         self.unauthenticateCallback = unauth
     }
@@ -35,6 +38,7 @@ struct HomePage: View {
                     
                     Button {
                         print("Display About Page")
+                        //TODO: Create this page and logic
                     } label: {
                         Image(systemName: "ellipsis")
                             .foregroundColor(.white)
@@ -42,7 +46,7 @@ struct HomePage: View {
                             .rotationEffect(.degrees(90))
                     }.buttonStyle(PlainButtonStyle())
                 }.padding(.top)
-                    
+                
                 ScrollView(showsIndicators: false) {
                     LazyVGrid(columns: self.columns, spacing: 8) {
                         ForEach((0...(self.data.count)), id: \.self) { i in
@@ -51,9 +55,9 @@ struct HomePage: View {
                                     self.createEntry()
                                 }
                             } else {
-                                RoundedRectangle(cornerRadius: 10) //TODO: Replace with an actual Entry card
-                                    .foregroundColor(.blue)
-                                    .frame(height: 180)
+                                EntryCard(callback: {
+                                    self.showEntry()
+                                }, entry: i - 1)
                             }
                         }
                     }
@@ -66,10 +70,18 @@ struct HomePage: View {
         }.padding()
         .ignoresSafeArea(.all, edges: .bottom)
         .background(Color.black, ignoresSafeAreaEdges: .all)
+        .sheet(isPresented: self.$displayEntry) {
+            EntryPage(entry: 0) // self.displayedEntry
+        }
     }
 }
 
 extension HomePage {
+    private func showEntry() {
+        self.displayedEntry = 1
+        self.displayEntry = true
+    }
+    
     private func createEntry() {
         print("Creating an entry")
     }
