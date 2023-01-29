@@ -14,18 +14,24 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if self.authenticated {
-                HomePage()
+                HomePage {
+                    self.localAuthCallback(false)
+                }
             } else {
-                WelcomePage(self.localAuthCallback)
+                WelcomePage {
+                    self.localAuthCallback(true)
+                }
             }
         }
     }
 }
 
 extension ContentView {
-    private func localAuthCallback() {
+    private func localAuthCallback(_ unlock: Bool) {
         //TODO: Add authentication callback for welcome page, set accordingly
-        self.authenticated = true
+        withAnimation {
+            self.authenticated = unlock
+        }
     }
 }
 
