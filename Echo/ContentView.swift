@@ -9,16 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var authenticated: Bool = false
+    @State var authenticated: Bool = true
     
     var body: some View {
         VStack {
             if self.authenticated {
                 HomePage()
             } else {
-                WelcomePage()
+                WelcomePage(self.localAuthCallback)
             }
         }
+    }
+}
+
+extension ContentView {
+    private func localAuthCallback() {
+        //TODO: Add authentication callback for welcome page, set accordingly
+        self.authenticated = true
     }
 }
 
