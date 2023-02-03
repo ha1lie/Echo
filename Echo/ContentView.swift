@@ -8,14 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var authenticated: Bool = true
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            if self.authenticated {
+                HomePage {
+                    self.localAuthCallback(false)
+                }
+            } else {
+                WelcomePage {
+                    self.localAuthCallback(true)
+                }
+            }
         }
-        .padding()
+    }
+}
+
+extension ContentView {
+    private func localAuthCallback(_ unlock: Bool) {
+        //TODO: Add authentication callback for welcome page, set accordingly
+        withAnimation {
+            self.authenticated = unlock
+        }
     }
 }
 
