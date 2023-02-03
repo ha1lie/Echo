@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26254AAA298D59ED005EBA45 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26254AA9298D59ED005EBA45 /* CameraManager.swift */; };
 		263FD3CB2986DA66008F3FA6 /* EntryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263FD3CA2986DA66008F3FA6 /* EntryPage.swift */; };
+		263FD3CD2986DD05008F3FA6 /* CameraPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263FD3CC2986DD05008F3FA6 /* CameraPage.swift */; };
+		263FD3CF2986DD62008F3FA6 /* CreationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263FD3CE2986DD62008F3FA6 /* CreationPage.swift */; };
+		263FD3D12986DD8F008F3FA6 /* EditPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263FD3D02986DD8F008F3FA6 /* EditPage.swift */; };
 		2680083F2985D7EA00B61568 /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2680083E2985D7EA00B61568 /* WelcomePage.swift */; };
 		268008422985D82B00B61568 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268008412985D82B00B61568 /* HomePage.swift */; };
 		268008442985D9E600B61568 /* Echo+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268008432985D9E600B61568 /* Echo+Colors.swift */; };
@@ -19,10 +23,15 @@
 		268C6F962985BCAC00101E99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268C6F952985BCAC00101E99 /* ContentView.swift */; };
 		268C6F982985BCAD00101E99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 268C6F972985BCAD00101E99 /* Assets.xcassets */; };
 		268C6F9B2985BCAD00101E99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 268C6F9A2985BCAD00101E99 /* Preview Assets.xcassets */; };
+		26DD72DC29885A3C00D4533A /* RecordingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DD72DB29885A3C00D4533A /* RecordingButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26254AA9298D59ED005EBA45 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		263FD3CA2986DA66008F3FA6 /* EntryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPage.swift; sourceTree = "<group>"; };
+		263FD3CC2986DD05008F3FA6 /* CameraPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPage.swift; sourceTree = "<group>"; };
+		263FD3CE2986DD62008F3FA6 /* CreationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationPage.swift; sourceTree = "<group>"; };
+		263FD3D02986DD8F008F3FA6 /* EditPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPage.swift; sourceTree = "<group>"; };
 		2680083E2985D7EA00B61568 /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
 		268008412985D82B00B61568 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		268008432985D9E600B61568 /* Echo+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Echo+Colors.swift"; sourceTree = "<group>"; };
@@ -36,6 +45,7 @@
 		268C6F972985BCAD00101E99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		268C6F9A2985BCAD00101E99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		268C6FA12985BD2600101E99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26DD72DB29885A3C00D4533A /* RecordingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26254AA8298D59DF005EBA45 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				26254AA9298D59ED005EBA45 /* CameraManager.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		268008402985D7EF00B61568 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +75,9 @@
 				2680083E2985D7EA00B61568 /* WelcomePage.swift */,
 				268008412985D82B00B61568 /* HomePage.swift */,
 				263FD3CA2986DA66008F3FA6 /* EntryPage.swift */,
+				263FD3CC2986DD05008F3FA6 /* CameraPage.swift */,
+				263FD3CE2986DD62008F3FA6 /* CreationPage.swift */,
+				263FD3D02986DD8F008F3FA6 /* EditPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -67,6 +88,7 @@
 				26800845298621C000B61568 /* NewEntryCard.swift */,
 				26800849298629C500B61568 /* FloatingLockButton.swift */,
 				2680084B29862BE500B61568 /* EntryCard.swift */,
+				26DD72DB29885A3C00D4533A /* RecordingButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -109,6 +131,7 @@
 				268C6FA12985BD2600101E99 /* Info.plist */,
 				268C6F932985BCAC00101E99 /* EchoApp.swift */,
 				268C6F952985BCAC00101E99 /* ContentView.swift */,
+				26254AA8298D59DF005EBA45 /* Controller */,
 				2680084D29862BEA00B61568 /* Data */,
 				268008402985D7EF00B61568 /* Views */,
 				268C6F972985BCAD00101E99 /* Assets.xcassets */,
@@ -198,13 +221,18 @@
 				2680083F2985D7EA00B61568 /* WelcomePage.swift in Sources */,
 				26800846298621C000B61568 /* NewEntryCard.swift in Sources */,
 				268008442985D9E600B61568 /* Echo+Colors.swift in Sources */,
+				263FD3CD2986DD05008F3FA6 /* CameraPage.swift in Sources */,
+				26254AAA298D59ED005EBA45 /* CameraManager.swift in Sources */,
 				268C6F962985BCAC00101E99 /* ContentView.swift in Sources */,
 				268C6F942985BCAC00101E99 /* EchoApp.swift in Sources */,
 				2680084A298629C500B61568 /* FloatingLockButton.swift in Sources */,
 				2680084F29862BFA00B61568 /* Entry.swift in Sources */,
 				263FD3CB2986DA66008F3FA6 /* EntryPage.swift in Sources */,
+				26DD72DC29885A3C00D4533A /* RecordingButton.swift in Sources */,
 				2680084C29862BE500B61568 /* EntryCard.swift in Sources */,
 				268008422985D82B00B61568 /* HomePage.swift in Sources */,
+				263FD3D12986DD8F008F3FA6 /* EditPage.swift in Sources */,
+				263FD3CF2986DD62008F3FA6 /* CreationPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +368,7 @@
 				INFOPLIST_FILE = Echo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Echo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Echo needs a camera to give sight to your echos";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Authenticate yourself to view secured data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -380,6 +409,7 @@
 				INFOPLIST_FILE = Echo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Echo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Echo needs a camera to give sight to your echos";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Authenticate yourself to view secured data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -13,6 +13,7 @@ struct EchoApp: App {
         WindowGroup {
             ContentView()
                 .statusBarHidden(true)
+                .preferredColorScheme(.dark)
         }
     }
 }

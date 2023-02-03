@@ -13,6 +13,7 @@ struct HomePage: View {
     
     @State var displayedEntry: Int? = nil
     @State var displayEntry: Bool = false
+    @State var showEntryCreation: Bool = false
     
     init(_ unauth: @escaping () -> Void) {
         self.unauthenticateCallback = unauth
@@ -28,44 +29,50 @@ struct HomePage: View {
     
     var body: some View {
         ZStack(alignment: .bottomLeading) {
-            VStack {
-                HStack {
-                    Text("1/28/23")
-                        .font(.system(size: 32, weight: .bold))
-                        .foregroundColor(.white)
-                    
-                    Spacer()
-                    
-                    Button {
-                        print("Display About Page")
-                        //TODO: Create this page and logic
-                    } label: {
-                        Image(systemName: "ellipsis")
+            if self.showEntryCreation {
+                CreationPage {
+                    self.createEntry()
+                }
+            } else {
+                VStack {
+                    HStack {
+                        Text("1/28/23")
+                            .font(.system(size: 32, weight: .bold))
                             .foregroundColor(.white)
-                            .font(.system(size: 26))
-                            .rotationEffect(.degrees(90))
-                    }.buttonStyle(PlainButtonStyle())
-                }.padding(.top)
-                
-                ScrollView(showsIndicators: false) {
-                    LazyVGrid(columns: self.columns, spacing: 8) {
-                        ForEach((0...(self.data.count)), id: \.self) { i in
-                            if i == 0 {
-                                NewEntryCard {
-                                    self.createEntry()
+                        
+                        Spacer()
+                        
+                        Button {
+                            print("Display About Page")
+                            //TODO: Create this page and logic
+                        } label: {
+                            Image(systemName: "ellipsis")
+                                .foregroundColor(.white)
+                                .font(.system(size: 26))
+                                .rotationEffect(.degrees(90))
+                        }.buttonStyle(PlainButtonStyle())
+                    }.padding(.top)
+                    
+                    ScrollView(showsIndicators: false) {
+                        LazyVGrid(columns: self.columns, spacing: 8) {
+                            ForEach((0...(self.data.count)), id: \.self) { i in
+                                if i == 0 {
+                                    NewEntryCard {
+                                        self.createEntry()
+                                    }
+                                } else {
+                                    EntryCard(callback: {
+                                        self.showEntry()
+                                    }, entry: i - 1)
                                 }
-                            } else {
-                                EntryCard(callback: {
-                                    self.showEntry()
-                                }, entry: i - 1)
                             }
                         }
                     }
                 }
-            }
-            
-            FloatingLockButton {
-                self.unauthenticateCallback()
+                
+                FloatingLockButton {
+                    self.unauthenticateCallback()
+                }
             }
         }.padding()
         .ignoresSafeArea(.all, edges: .bottom)
@@ -83,7 +90,9 @@ extension HomePage {
     }
     
     private func createEntry() {
-        print("Creating an entry")
+        withAnimation {
+            self.showEntryCreation.toggle()
+        }
     }
 }
 
